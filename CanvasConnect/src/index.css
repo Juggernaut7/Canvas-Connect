@@ -1,0 +1,54 @@
+/* client/src/index.css */
+
+/* Import Google Fonts - Ensure these match your tailwind.config.js font families */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;900&display=swap');
+
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global body styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif; /* Default font, matches tailwind.config.js */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: theme('colors.primary.dark'); /* Use custom Tailwind color */
+    color: theme('colors.neutral.50'); /* Use custom Tailwind color for text */
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Prevent scrolling, especially for background animations */
+}
+
+/* Custom utility class for the Montserrat font (if used for headings) */
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Basic animation for fade-in elements */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Optional: Scrollbar styling for modals/history */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: theme('colors.neutral.800');
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: theme('colors.accent.DEFAULT');
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.accent.light');
+}
