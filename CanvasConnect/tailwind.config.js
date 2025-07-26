@@ -7,47 +7,48 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Primary brand color - a deep, sophisticated blue
+        // Primary brand color - A sophisticated, deep, and slightly cool base for backgrounds and main elements.
         primary: {
-          DEFAULT: '#2C3E50', // Dark Blue/Charcoal
-          light: '#34495E',
-          dark: '#212F3D',
+          DEFAULT: '#263238', // Dark Slate Gray - A deep, modern, slightly blue-tinted dark
+          light: '#37474F',   // Lighter shade for cards, panels, secondary backgrounds
+          dark: '#1C252A',    // Even deeper, almost black-blue for body/root background
         },
-        // Accent color - a vibrant, engaging tone for interactive elements
+        // Accent color - A truly vibrant, electric tone for primary calls-to-action, highlights, and interactive elements.
         accent: {
-          DEFAULT: '#3498DB', // Bright Sky Blue
-          light: '#5DADE2',
-          dark: '#2874A6',
+          DEFAULT: '#00E5FF', // Electric Cyan - Very bright, eye-catching, and energetic
+          light: '#84FFFF',   // Luminous Aqua - For hover states, subtle glows, very light accents
+          dark: '#00B8D4',    // Strong Cyan - A slightly deeper, but still highly vibrant shade
         },
-        // Secondary accent - a complementary, warm color
+        // Secondary accent - A warm, inviting, and complementary pop of color for secondary actions or emphasis.
         secondary: {
-          DEFAULT: '#E67E22', // Orange/Terracotta
-          light: '#EB984E',
-          dark: '#B9631A',
+          DEFAULT: '#FF9100', // Vibrant Orange - Energetic, warm, and stands out beautifully
+          light: '#FFC107',   // Bright Amber - Lighter, more yellow-orange for subtle variations
+          dark: '#BF360C',    // Rich Rust - A deeper, more grounded warm tone
         },
-        // Neutral palette for text, backgrounds, borders
+        // Neutral palette - A clean, high-contrast system for text, borders, and subtle UI elements.
         neutral: {
-          50: '#F8F9F9',   // Very Light Gray
-          100: '#F2F3F4',
-          200: '#E5E7E9',
-          300: '#D7DBDD',
-          400: '#ABB3B9',
-          500: '#7F8C8D',   // Medium Gray
-          600: '#626D6E',
-          700: '#4A5354',
-          800: '#343A3B',
-          900: '#212526',   // Very Dark Gray
+          50: '#FDFDFD',   // Almost pure white - for crisp text on dark backgrounds
+          100: '#F5F5F5',   // Very light gray - for subtle separators or backgrounds
+          200: '#E0E0E0',   // Light gray - for borders, subtle shadows
+          300: '#C7C7C7',   // Medium-light gray
+          400: '#A1A1A1',   // Mid-gray
+          500: '#757575',   // True mid-gray - for less prominent text
+          600: '#5C5C5C',   // Darker gray
+          700: '#424242',   // Dark charcoal
+          800: '#2C2C2C',   // Very dark charcoal - for text on lighter primary backgrounds
+          900: '#1A1A1A',   // Near black - for deepest text/elements
         },
-        // Special colors for whiteboard elements (optional, can be overridden by user choice)
+        // Special colors for whiteboard elements - keeping the canvas pure and its borders elegant.
         whiteboard: {
-          background: '#F0F0F0', // Light background for the canvas
-          border: '#D3D3D3',     // Light border
+          background: '#FFFFFF', // Pure white for the canvas background for maximum drawing clarity
+          border: '#E0E0E0',     // Neutral 200 - An elegant, subtle border for the canvas
         },
       },
-      // You can also extend other theme properties here, e.g., fonts
+      // Ensure Montserrat is explicitly available for headings as used in LandingPage
       fontFamily: {
         sans: ['Inter', 'sans-serif'], // Default sans-serif font
-        mono: ['"Press Start 2P"', 'monospace'], // For retro/game elements
+        mono: ['"Press Start 2P"', 'monospace'], // For retro/game elements (if still desired)
+        montserrat: ['Montserrat', 'sans-serif'], // Explicitly define Montserrat for headings
       },
     },
   },
