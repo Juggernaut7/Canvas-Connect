@@ -19,7 +19,7 @@ body {
     color: theme('colors.neutral.50'); /* Use custom Tailwind color for text */
     min-height: 100vh;
     width: 100vw;
-    overflow: hidden; /* Prevent scrolling, especially for background animations */
+    /* REMOVED: overflow: hidden; */ /* Allow scrolling on the body */
 }
 
 /* Custom utility class for the Montserrat font (if used for headings) */

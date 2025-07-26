@@ -8,7 +8,7 @@ import { AnimatePresence } from 'framer-motion';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { RoomProvider } from './context/RoomContext';
 
-import LandingPage from './pages/LandingPage.jsx'; // NEW: Import LandingPage
+import LandingPage from './pages/LandingPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import RegisterPage from './pages/RegisterPage.jsx';
 import HomePage from './pages/HomePage.jsx';
@@ -33,7 +33,6 @@ const AppContent = () => {
     // Redirect authenticated users from login/register/root to home
     useEffect(() => {
         if (isAuthenticated) {
-            // If already authenticated, and on login, register, or root path, redirect to home
             if (window.location.pathname === '/' || window.location.pathname === '/login' || window.location.pathname === '/register') {
                 navigate('/home', { replace: true });
             }
@@ -42,19 +41,16 @@ const AppContent = () => {
 
     return (
         <AnimatePresence mode="wait">
-            <Routes>
-                {/* NEW: Root path points to LandingPage */}
-                <Route path="/" element={<LandingPage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register" element={<RegisterPage />} />
-
-                {/* Protected Routes */}
-                <Route path="/home" element={<PrivateRoute><HomePage /></PrivateRoute>} />
-                <Route path="/whiteboard/:roomId" element={<PrivateRoute><WhiteboardPage /></PrivateRoute>} />
-
-                {/* Fallback for undefined routes */}
-                <Route path="*" element={<h1 className="text-4xl text-neutral-400 text-center mt-20">404 - Page Not Found</h1>} />
-            </Routes>
+            <div className="relative min-h-screen overflow-y-auto"> {/* Added overflow-y-auto for scrolling */}
+                <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/register" element={<RegisterPage />} />
+                    <Route path="/home" element={<PrivateRoute><HomePage /></PrivateRoute>} />
+                    <Route path="/whiteboard/:roomId" element={<PrivateRoute><WhiteboardPage /></PrivateRoute>} />
+                    <Route path="*" element={<h1 className="text-4xl text-neutral-400 text-center mt-20">404 - Page Not Found</h1>} />
+                </Routes>
+            </div>
         </AnimatePresence>
     );
 };

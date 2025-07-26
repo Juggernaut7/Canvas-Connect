@@ -167,7 +167,7 @@ const WhiteboardPage = () => {
 
     return (
         <motion.div
-            className="flex flex-col h-[140vh] bg-primary-dark p-4 relative w-full"
+            className="flex flex-col min-h-screen bg-primary-dark p-4 relative w-full"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -188,7 +188,7 @@ const WhiteboardPage = () => {
                 {/* Room ID and User Info - Centered */}
                 <div className="text-center flex-grow">
                     <h1 className="text-2xl md:text-3xl font-extrabold text-accent-DEFAULT font-montserrat leading-tight mb-1">
-                        Room: {roomId?.substring(0, 8)}...
+                        Room: {roomId}
                     </h1>
                     <p className="text-neutral-400 text-sm">
                         You are: <span className="font-bold text-accent-light">{currentUser?.username || 'Guest'}</span>
