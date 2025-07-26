@@ -20,7 +20,7 @@ const server = http.createServer(app); // Create HTTP server for Express and Soc
 // Middleware
 // Enable CORS for specified origin
 app.use(cors({
-    origin: process.env.CORS_ORIGIN, // e.g., 'http://localhost:3000'
+    origin: process.env.CORS_ORIGIN || "https://canvas-connect-2.onrender.com",
     credentials: true,
 }));
 app.use(express.json()); // Body parser for JSON requests
