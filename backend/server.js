@@ -17,16 +17,24 @@ connectDB();
 
 const app = express();
 const server = http.createServer(app); // Create HTTP server for Express and Socket.IO
+
 // Middleware
-// Enable CORS for specified origin
-app.use(cors)
+// Enable CORS for ANY origin
+// WARNING: Using '*' in production can be a security risk.
+// For production, specify exact origins (e.g., process.env.CORS_ORIGIN)
+// or a list of allowed origins.
+app.use(cors({
+    origin: '*', // <--- MODIFIED: Allows requests from any origin
+    credentials: true,
+}));
 app.use(express.json()); // Body parser for JSON requests
 
 // API Routes
 app.use('/api/rooms', roomRoutes);
 
 // Initialize Socket.IO with the HTTP server and CORS origin
-initSocket(server, process.env.CORS_ORIGIN);
+// Note: Socket.IO's CORS also needs to be updated if you want it to accept '*'
+initSocket(server, '*'); // <--- MODIFIED: Pass '*' to Socket.IO init as well
 
 // Basic route for testing server status
 app.get('/', (req, res) => {
