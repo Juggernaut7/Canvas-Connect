@@ -67,7 +67,7 @@ const LandingPage = () => {
                         </motion.p>
                         <motion.div className="flex flex-col sm:flex-row gap-4" variants={itemVariants}>
                             <Link to="/login">
-                                <Button variant="primary" className="text-lg px-6 py-3">Get Started</Button>
+                                <Button variant="primary" className="text-lg px-6 py-3 border-white border text-white hover:text-black">Get Started</Button>
                             </Link>
                             <Link to="/register">
                                 <Button variant="neutral" className="text-lg px-6 py-3">Register Now</Button>
